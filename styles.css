@@ -34,4 +34,48 @@
     align-items: center;
     border-radius: 10px 10px 30px 10px;
     border: 3px solid #222;
+    margin-bottom:40px;
 }
+
+.btn{
+    border-radius: 50%;
+    background-color: #9e2359;
+    padding: 30px;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+}
+
+.buttons-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+
+.controls{
+    display: flex;
+    gap:400px;
+} 
+
+.arrow-button{
+    width: 70px;
+    height: 60px;
+    background-color: #9e2359;
+    cursor: pointer;
+}
+
+.d-pad-vertical{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+
+.up{
+    clip-path: polygon(50% 0%,0% 100%,100% 100%);
+    filter: drop-shadow(0px 2px 0px #111);
+}
+
+.down{
+    clip-path: polygon(0% 0%,100% 0%,50% 100%);
+    filter: drop-shadow(0px 2px 0px #111);
+}
+
