@@ -1,4 +1,4 @@
-gridContainer=document.getElementById("grid-container");
+const gridContainer=document.querySelector(".grid-container");
 
 
 
