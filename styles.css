@@ -1,0 +1,15 @@
+#grid-container{
+    display: flex;
+    width: 320px;
+    height: 320px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.grid-element{
+    height: 20px;
+    width:20px;
+    box-sizing: border-box;
+    border:1px solid red;
+    background-color: lightgray;
+}
