@@ -23,6 +23,7 @@
     align-items: center;
     flex-direction: column;
     padding: 20px 40px 60px 40px;
+    position: relative;
 }
 
 .screen-bezel{
@@ -44,6 +45,7 @@
     padding: 30px;
     cursor: pointer;
     box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+    filter: blur(1px);
 }
 
 .circle-button-container{
@@ -90,13 +92,13 @@
 }
 
 .soft-arrow:active {
-    transform: rotate(-45deg) scale(0.92);
+    transform: rotate(-45deg) scale(0.95) translate(1px, 1px);
     box-shadow: inset 2px 2px 5px rgba(0,0,0,0.6);
     filter: blur(0.3px);
 }
 
 .btn:active {
-    transform: scale(0.92);
+    transform: scale(0.95) translate(1px, 1px);
     box-shadow: inset 2px 2px 5px rgba(0,0,0,0.6);
     filter: blur(0.3px);
 }
@@ -168,9 +170,65 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    flex-direction: column;
+    gap:10px;
 }
 
 .grid-size-textbox{
     position: absolute;
     top: 110%;
+}
+
+.color-picker-textbox{
+    position: absolute;
+    top: 90%;
+    width:80px;
+}
+
+.picked-color{
+    width: 70px;
+    height: 30px;
+    background-color: blue;
+    border: 2px solid #111;
+}
+
+.picked-color-bezel{
+    width: 78px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #353535;
+    border: 2px solid #111;
+}
+
+.reset-btn{
+    position: absolute;
+    top: 20%;
+    right:3%;
+    width:15px;
+    height: 62px;
+    font-size: 12px;
+    background-color: blue;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    letter-spacing: -2px;
+    text-justify: center;
+    background-color: #9e2359;
+    cursor: pointer;
+    border-radius: 7px;
+    filter: blur(0.5px);
+    box-shadow: 
+        2px 4px 8px rgba(0,0,0,0.4),
+        inset -2px 2px 4px rgba(255,255,255,0.2),
+        inset 2px -4px 6px rgba(0,0,0,0.4);
+    user-select: none;
+}
+
+.reset-btn:active{
+    transform: scale(0.95) translate(1px, 1px);
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.6);
+    filter: blur(0.7px);
+    transition: transform 0.05s ease-in-out;
 }

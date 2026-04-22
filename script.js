@@ -6,6 +6,7 @@ gridSizeValue.textContent=`${gridSize} x ${gridSize}`;
 
 const upBtn=document.querySelector(".up");
 const downBtn=document.querySelector(".down");
+const resetBtn=document.querySelector(".reset-btn");
 
 let holdTimer=null;
 let holdInterval=null;
@@ -85,3 +86,7 @@ downBtn.addEventListener("mousedown",(e)=>{
 });
 
 window.addEventListener("mouseup",stopHoldOnArrows);
+
+resetBtn.addEventListener("click",()=>{
+    updateGrid(16);
+})
