@@ -8,10 +8,10 @@
 }
 
 .grid-element{
-    height: 30px;
-    width:30px;
     box-sizing: border-box;
     border:0.5px solid black;
+    flex-grow:1;
+    flex-shrink: 1;
 }
 
 .gameboy-body{
