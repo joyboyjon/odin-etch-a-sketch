@@ -8,15 +8,33 @@
 </head>
 <body>
     <div class = "gameboy-body">
-        <div class="screen-bezel"><div class ="grid-container game-screen"></div></div>
+        <div class="screen-bezel">
+            <div class ="grid-container game-screen"></div>
+            <div class="gameboy-title">Etch-a-Sketch</div>
+    </div>
         <div class="controls">
-            <div class="buttons-wrapper">
-                <button class="btn rainbow"></button>
-                <button class="btn shade"></button>
+            <div class="circle-button-container">
+                <div class="btn-wrapper">
+                    <button class="btn rainbow"></button>
+                    <div class="rainbow-textbox">Rainbow</div>
+                </div>
+                <div class="btn-wrapper"> 
+                    <button class="btn shade"></button>
+                    <div class="shade-textbox">Shade</div>
+                </div>
             </div>
-            <div class="d-pad-vertical">
-                <button class="arrow-button up"></button>
-                <button class="arrow-button down"></button>
+            <div class="color-picker-wrapper">
+                <button class="btn color-picker"></button>
+            </div>
+            <div class="right-wrapper">
+                <div class="textbox-bezel">
+                    <div class="grid-size-value">xxx</div>
+                    <div class="grid-size-textbox">Canva Size</div>
+                </div>
+                <div class="d-pad">
+                    <div class="soft-arrow up"></div>
+                    <div class="soft-arrow down"></div>
+                </div>
             </div>
         </div>
         

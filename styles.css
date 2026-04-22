@@ -35,6 +35,7 @@
     border-radius: 10px 10px 30px 10px;
     border: 3px solid #222;
     margin-bottom:40px;
+    position: relative;
 }
 
 .btn{
@@ -45,7 +46,7 @@
     box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
 }
 
-.buttons-wrapper{
+.circle-button-container{
     display: flex;
     flex-direction: column;
     gap:15px;
@@ -53,29 +54,123 @@
 
 .controls{
     display: flex;
-    gap:400px;
+    gap:170px;
 } 
 
-.arrow-button{
-    width: 70px;
+
+.d-pad{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.soft-arrow {
+    width: 60px;
     height: 60px;
     background-color: #9e2359;
     cursor: pointer;
+    transition: all 0.2s ease;
+
+    filter: blur(0.5px);
+    
+    box-shadow: 
+        2px 4px 8px rgba(0,0,0,0.4),
+        inset -2px 2px 4px rgba(255,255,255,0.2),
+        inset 2px -4px 6px rgba(0,0,0,0.4);
 }
 
-.d-pad-vertical{
+.down {
+    border-radius: 20% 80% 20% 20%; 
+    transform: rotate(-45deg); 
+}
+
+.up {
+    border-radius: 20% 20% 20% 80%;
+    transform: rotate(-45deg);
+}
+
+.soft-arrow:active {
+    transform: rotate(-45deg) scale(0.92);
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.6);
+    filter: blur(0.3px);
+}
+
+.btn:active {
+    transform: scale(0.92);
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.6);
+    filter: blur(0.3px);
+}
+
+.grid-size-value{
+    width: 70px;
+    height: 30px;
+    background-color: #82a053;
+    border: 2px solid #111;
     display: flex;
-    flex-direction: column;
-    gap:15px;
+    align-items: center;
+    justify-content: center;
 }
 
-.up{
-    clip-path: polygon(50% 0%,0% 100%,100% 100%);
-    filter: drop-shadow(0px 2px 0px #111);
+.right-wrapper{
+    display: flex;
+    align-items: center;
+    gap:30px;
+    margin-left: -100px;
+    
 }
 
-.down{
-    clip-path: polygon(0% 0%,100% 0%,50% 100%);
-    filter: drop-shadow(0px 2px 0px #111);
+.textbox-bezel{
+    width: 78px;
+    height: 38px;
+    background-color: #353535;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #111;
+    position: relative;
 }
 
+.btn-wrapper{
+    position: relative;
+    display:  flex;
+}
+
+.gameboy-title{
+    height: 30px;
+    width: 200px;
+    position: absolute;
+    top:101%;
+    left:5%;
+    font-size: 25px;
+}
+
+.rainbow-textbox{
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    left: 105%;
+    bottom: 31.5%;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.shade-textbox{
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    left: 105%;
+    bottom: 31.5%;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.color-picker-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-size-textbox{
+    position: absolute;
+    top: 110%;
+}
