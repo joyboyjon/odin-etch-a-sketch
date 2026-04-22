@@ -8,6 +8,14 @@ const upBtn=document.querySelector(".up");
 const downBtn=document.querySelector(".down");
 const resetBtn=document.querySelector(".reset-btn");
 
+const colorPickerBtn= document.querySelector(".color-picker");
+const realInput=document.getElementById("real-color-picker");
+const displayBox=document.querySelector(".picked-color");
+
+let isDrawing=false;
+
+let selectedColor='#82a053';
+
 let holdTimer=null;
 let holdInterval=null;
 
@@ -85,8 +93,42 @@ downBtn.addEventListener("mousedown",(e)=>{
     if(e.button===0) startDecrementing();
 });
 
-window.addEventListener("mouseup",stopHoldOnArrows);
+window.addEventListener("mouseup",globalMouseUpHandler);
 
 resetBtn.addEventListener("click",()=>{
     updateGrid(16);
+    displayBox.style.backgroundColor='#82a053';
 })
+
+colorPickerBtn.addEventListener("click",()=>{
+    realInput.click();
+})
+
+realInput.addEventListener("input",(e)=>{
+    selectedColor=e.target.value;
+    displayBox.style.backgroundColor=selectedColor;
+})
+
+function updateGridElementColor(e){
+    if(e.target.classList.contains("grid-element")) e.target.style.backgroundColor=selectedColor;
+}
+
+gridContainer.addEventListener("mousedown",(e)=>{
+    if(e.button===0) {
+        isDrawing=true;
+        updateGridElementColor(e);
+    }
+})
+
+function stopDrawing(){
+    isDrawing=false;
+}
+
+gridContainer.addEventListener("mouseover",(e)=>{
+    if(isDrawing) updateGridElementColor(e);
+})
+
+function globalMouseUpHandler(){
+    stopHoldOnArrows();
+    stopDrawing();
+}
